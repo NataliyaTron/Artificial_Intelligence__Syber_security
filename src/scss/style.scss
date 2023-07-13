@@ -1,0 +1,515 @@
+@import "normalizes.scss";
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans");
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans_SemiCondensed-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: local("Circular Std");
+  src: url(../fonts/CircularStd-Book.ttf);
+  font-weight: 450;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url(../fonts/CircularStd-Medium.ttf);
+  font-weight: 500;
+}
+
+$white-color: #fff;
+$blue-color: #3a68b8;
+$grey-color: #2c3647;
+
+%section-title {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 52px;
+}
+
+%section-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: $white-color;
+  opacity: 0.7;
+}
+
+%button {
+  background: $blue-color;
+  padding: 15px 30px;
+  width: fit-content;
+  border-radius: 5px;
+  font-weight: 600;
+  color: $white-color;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+%footer-menu-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20.24px;
+  color: $white-color;
+  text-transform: uppercase;
+}
+
+%footer-menu-text {
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 17.71px;
+  color: $white-color;
+  opacity: 0.6;
+}
+
+@mixin button-hover {
+  background-color: $white-color;
+  color: $blue-color;
+}
+
+@mixin title-hover {
+  transform: scale(1.2, 1.2);
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(6, 1, 39) 46%,
+    rgba(57, 63, 64, 1) 100%
+  );
+  font-family: Open Sans, sans-serif;
+}
+
+.container {
+  max-width: 1146px;
+  margin: 0 auto;
+}
+
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  &__logo {
+    width: 283.09px;
+    height: 57px;
+  }
+
+  &__button {
+    @extend %button;
+  }
+
+  &__button:hover {
+    @include button-hover;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__list-item {
+    color: $white-color;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    transition: all 1s ease;
+  }
+
+  &__list-item:hover {
+    text-decoration: underline;
+  }
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 29px;
+    color: $blue-color;
+    text-transform: uppercase;
+    margin-top: 160px;
+  }
+
+  &__title {
+    width: 604px;
+    font-weight: 800;
+    font-size: 55px;
+    color: $white-color;
+    margin-top: 10px;
+  }
+
+  &__text {
+    width: 558px;
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    color: $white-color;
+    opacity: 0.7;
+    margin-top: 40px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    margin-top: 50px;
+  }
+
+  &__button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    @extend %button;
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  &__button:hover {
+    @include button-hover;
+  }
+
+  &__button-img {
+    width: 27px;
+    height: 26px;
+  }
+
+  &__image {
+    width: 632px;
+    height: 634px;
+    background: url("../assets/banner_picture.png");
+    width: 632px;
+    position: absolute;
+    top: 49px;
+    right: 0;
+  }
+
+  &__companies-group {
+    display: flex;
+    gap: 71px;
+    margin-top: 197px;
+  }
+
+  &__company:hover {
+    transform: scale(1.3, 1.3);
+  }
+}
+
+.artificial-intelligence {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 68px;
+    padding-top: 130px;
+  }
+
+  &__img {
+    width: 725px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section-title {
+    width: 484px;
+    @extend %section-title;
+  }
+
+  &__section-title:hover {
+    @include title-hover;
+  }
+
+  &__section-text {
+    width: 460px;
+    @extend %section-text;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    @extend %button;
+  }
+
+  &__button:hover {
+    @include button-hover;
+  }
+}
+
+.feature {
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 170px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(73, 68, 68);
+    border-radius: 10px;
+    padding-bottom: 30px;
+  }
+
+  &__item:hover {
+    transform: scale(1.1, 1.1);
+  }
+
+  &__img {
+    width: 98px;
+    height: 103px;
+  }
+
+  &__img:first-child {
+    width: 73px;
+    height: 69px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 31.25px;
+    color: $white-color;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  &__text {
+    @extend %section-text;
+    text-align: center;
+  }
+
+  &__ellipses {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__ellipse-image {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $grey-color;
+  }
+
+  &__ellipse-image:hover {
+    border: 5px solid $blue-color;
+    border-radius: 64px;
+  }
+}
+
+.about {
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 170px;
+    padding-bottom: 170px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    width: 548px;
+    @extend %section-title;
+    margin-bottom: 40px;
+  }
+
+  &__title:hover {
+    @include title-hover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__text {
+    width: 460px;
+    @extend %section-text;
+  }
+}
+
+.footer {
+  font-family: "Circular Std";
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 31px;
+    padding-top: 77.12px;
+    padding-bottom: 148px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 37px;
+  }
+
+  &__company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 9.86px;
+    width: 261px;
+    @extend %footer-menu-text;
+  }
+
+  &__logo {
+    width: 160.05px;
+    height: 88.02px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__contact-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white-color;
+  }
+
+  &__contact-text:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    @extend %footer-menu-title;
+    margin-bottom: 32px;
+  }
+
+  &__title:hover {
+    text-decoration: underline;
+    @include title-hover;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__list-item {
+    @extend %footer-menu-text;
+    font-weight: 450;
+  }
+
+  &__list-item:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-store {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__title {
+    @extend %footer-menu-title;
+    margin-bottom: 32px;
+  }
+
+  &__title:hover {
+    text-decoration: underline;
+    @include title-hover;
+  }
+
+  &__text {
+    width: 261px;
+    @extend %footer-menu-text;
+    margin-bottom: 29px;
+  }
+
+  &__website {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.71px;
+    color: $white-color;
+    margin-bottom: 21px;
+  }
+
+  &__website:hover {
+    text-decoration: underline;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 52px;
+  }
+
+  &__social-item-img {
+    height: 15px;
+  }
+
+  &__social-item-img:hover {
+    transform: scale(2, 2);
+  }
+
+  &__language {
+    display: flex;
+  }
+
+  &__language-text {
+    margin-left: 8.26px;
+    margin-right: 9.7px;
+    font-weight: 450;
+    font-size: 14px;
+    line-height: 17.71px;
+    color: $white-color;
+  }
+
+  &__dropdown {
+    width: 10px;
+    height: 5px;
+  }
+}
